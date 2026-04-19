@@ -1,0 +1,524 @@
+import React, { useState } from 'react';
+import type { AppSettings, ImageSourceProvider, AiImageStyle } from '../types';
+import { Globe, Image, CheckCircle, AlertTriangle, WandSparkles } from './Icons';
+import { SettingsLayout } from './SettingsLayout';
+import { testGeminiApiKey } from '../services/geminiService';
+
+
+
+
+interface SettingsIntegrationsProps {
+    settings: AppSettings;
+    onSaveSettings: (settings: AppSettings) => void;
+    onShowToast: (message: string, type: 'success' | 'error' | 'warning' | 'info') => void;
+    isProActive?: boolean;
+}
+
+const IntegrationCard: React.FC<{ 
+    title: string; 
+    icon: React.ReactNode;
+    children: React.ReactNode; 
+    isConfigured: boolean; 
+}> = ({ title, icon, children, isConfigured }) => (
+    <div className="aicoagac-card" style={{ margin: '0 0 24px 0' }}>
+        <div className="aicoagac-card-header">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <h3 className="aicoagac-card-title" style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: 0 }}>
+                    <div style={{
+                        width: '40px',
+                        height: '40px',
+                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        borderRadius: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                        {icon}
+                    </div>
+                    {title}
+                </h3>
+                {isConfigured && (
+                    <div className="aicoagac-alert success" style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        fontSize: '12px', 
+                        fontWeight: '600',
+                        gap: '6px',
+                        padding: '4px 8px',
+                        margin: 0
+                    }}>
+                        <div style={{ 
+                            width: '8px', 
+                            height: '8px', 
+                            borderRadius: '50%', 
+                            background: '#22c55e' 
+                        }}></div>
+                        Configured
+                    </div>
+                )}
+            </div>
+        </div>
+        {children}
+    </div>
+);
+
+export const SettingsIntegrations: React.FC<SettingsIntegrationsProps> = ({ 
+    settings, 
+    onSaveSettings, 
+    onShowToast 
+}) => {
+    const [currentSettings, setCurrentSettings] = useState<AppSettings>(settings);
+    const [isDirty, setIsDirty] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
+    const [isTestingApi, setIsTestingApi] = useState(false);
+    const [apiTestResult, setApiTestResult] = useState<{ success: boolean; error?: string } | null>(null);
+
+    const handleSettingChange = (key: keyof AppSettings, value: any) => {
+        const updatedSettings = { ...currentSettings, [key]: value };
+        setCurrentSettings(updatedSettings);
+        setIsDirty(true);
+        
+        // Clear API test result when API key changes
+        if (key === 'geminiApiKey') {
+            setApiTestResult(null);
+        }
+        
+
+    };
+
+    const handleTestApiKey = async () => {
+        if (!currentSettings.geminiApiKey || currentSettings.geminiApiKey.trim() === '') {
+            setApiTestResult({ success: false, error: 'Please enter an API key first' });
+            return;
+        }
+
+        setIsTestingApi(true);
+        setApiTestResult(null);
+        
+        try {
+            const result = await testGeminiApiKey(currentSettings.geminiApiKey);
+            setApiTestResult(result);
+            
+            if (result.success) {
+                onShowToast('API key is valid and working!', 'success');
+            } else {
+                onShowToast(`API key test failed: ${result.error}`, 'error');
+            }
+        } catch (error) {
+            setApiTestResult({ success: false, error: 'Test failed unexpectedly' });
+            onShowToast('API key test failed unexpectedly', 'error');
+        } finally {
+            setIsTestingApi(false);
+        }
+    };
+
+    const handleSave = async () => {
+        if (!isDirty) return;
+        
+        setIsSaving(true);
+        try {
+            await onSaveSettings(currentSettings);
+            setIsDirty(false);
+            onShowToast('Integration settings saved successfully!', 'success');
+        } catch (error) {
+            onShowToast('Failed to save integration settings', 'error');
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
+    const isImageSourceConfigured = () => {
+        switch (currentSettings.imageSourceProvider) {
+            case 'pexels':
+                return !!currentSettings.pexelsApiKey;
+            case 'unsplash':
+                return !!currentSettings.unsplashApiKey;
+            case 'pixabay':
+                return !!currentSettings.pixabayApiKey;
+            case 'ai':
+                return !!currentSettings.googleCloudProjectId;
+            default:
+                return false;
+        }
+    };
+
+    const saveButton = isDirty ? (
+        <button
+            onClick={handleSave}
+            disabled={isSaving}
+            className="aicoagac-button aicoagac-button-primary"
+            style={{ minWidth: '120px' }}
+        >
+            {isSaving ? 'Saving...' : 'Save Changes'}
+        </button>
+    ) : null;
+
+    return (
+        <SettingsLayout
+            title="Integrations & Services"
+            description="Connect to external services and configure how content is generated"
+            icon={<Globe style={{ width: '24px', height: '24px', color: 'white' }} />}
+            actions={saveButton}
+        >
+            {/* Google AI Integration */}
+            <IntegrationCard 
+                title="Google AI (Gemini)" 
+                icon={<WandSparkles style={{ width: '20px', height: '20px', color: 'white' }} />}
+                isConfigured={!!currentSettings.geminiApiKey}
+            >
+                <div className="aicoagac-form-group">
+                    <label htmlFor="gemini-api-key" className="aicoagac-label">API Key</label>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                        <input 
+                            id="gemini-api-key" 
+                            type="password" 
+                            placeholder="Enter Google AI API Key" 
+                            value={currentSettings.geminiApiKey} 
+                            onChange={e => handleSettingChange('geminiApiKey', e.target.value)} 
+                            className="aicoagac-input"
+                            style={{ flex: 1 }}
+                        />
+                        <button
+                            onClick={handleTestApiKey}
+                            disabled={isTestingApi || !currentSettings.geminiApiKey}
+                            className="aicoagac-button secondary"
+                            style={{ 
+                                minWidth: '100px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                fontSize: '14px'
+                            }}
+                        >
+                            {isTestingApi ? (
+                                <>
+                                    <span className="aicoagac-spinner" style={{ width: '14px', height: '14px' }}></span>
+                                    Testing...
+                                </>
+                            ) : (
+                                <>
+                                    {apiTestResult?.success ? (
+                                        <CheckCircle style={{ width: '14px', height: '14px', color: '#22c55e' }} />
+                                    ) : apiTestResult?.error ? (
+                                        <AlertTriangle style={{ width: '14px', height: '14px', color: '#ef4444' }} />
+                                    ) : null}
+                                    Test API
+                                </>
+                            )}
+                        </button>
+                    </div>
+                    
+                    {apiTestResult && (
+                        <div style={{ 
+                            marginTop: '8px',
+                            padding: '8px 12px',
+                            borderRadius: '6px',
+                            fontSize: '13px',
+                            backgroundColor: apiTestResult.success ? '#dcfce7' : '#fef2f2',
+                            border: `1px solid ${apiTestResult.success ? '#22c55e' : '#ef4444'}`,
+                            color: apiTestResult.success ? '#166534' : '#dc2626'
+                        }}>
+                            {apiTestResult.success ? (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <CheckCircle style={{ width: '14px', height: '14px' }} />
+                                    API key is valid and working correctly
+                                </div>
+                            ) : (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <AlertTriangle style={{ width: '14px', height: '14px' }} />
+                                    {apiTestResult.error}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                    
+                    <a 
+                        href="https://aistudio.google.com/app/apikey" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="aicoagac-page-description"
+                        style={{ 
+                            color: '#0073aa', 
+                            textDecoration: 'none', 
+                            marginTop: '8px', 
+                            display: 'block' 
+                        }}
+                    >
+                        → Get your Google AI API key
+                    </a>
+                </div>
+            </IntegrationCard>
+
+            {/* ChatGPT (Soon) placeholder - non-functional UI */}
+            <IntegrationCard 
+                title={
+                    <>
+                        ChatGPT (Soon)
+                        <span style={{
+                            marginLeft: '8px',
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            background: '#fef3c7',
+                            border: '1px solid #fde68a',
+                            color: '#92400e',
+                            padding: '2px 6px',
+                            borderRadius: '999px'
+                        }}>SOON</span>
+                    </>
+                } as any
+                icon={<WandSparkles style={{ width: '20px', height: '20px', color: 'white' }} />}
+                isConfigured={false}
+            >
+                <div className="aicoagac-form-group">
+                    <p className="aicoagac-page-description" style={{ marginBottom: '12px' }}>
+                        Native ChatGPT support is on the way. You will be able to generate ideas and drafts with OpenAI models (e.g., GPT-4o). This section is a preview.
+                    </p>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', opacity: 0.6 }}>
+                        <input 
+                            type="password"
+                            placeholder="OpenAI API Key (Coming soon)"
+                            className="aicoagac-input"
+                            disabled
+                            style={{ flex: 1 }}
+                        />
+                        <button
+                            className="aicoagac-button secondary"
+                            disabled
+                            title="Coming soon"
+                            style={{ minWidth: '140px' }}
+                        >
+                            Connect OpenAI
+                        </button>
+                    </div>
+
+                </div>
+            </IntegrationCard>
+
+            {/* Image Source Integration */}
+            <IntegrationCard 
+                title="Featured Image Source" 
+                icon={<Image style={{ width: '20px', height: '20px', color: 'white' }} />}
+                isConfigured={isImageSourceConfigured()}
+            >
+                <p className="aicoagac-page-description" style={{ marginBottom: '20px' }}>
+                    Select where to get featured images. For stock photo sites, an API key is required.
+                </p>
+                
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', 
+                    gap: '12px', 
+                    marginBottom: '16px' 
+                }}>
+                   {(['pexels', 'unsplash', 'pixabay', 'ai'] as ImageSourceProvider[]).map(provider => (
+                        <label 
+                            key={provider} 
+                            className={`aicoagac-button ${currentSettings.imageSourceProvider === provider ? '' : 'secondary'}`}
+                            style={{
+                                textTransform: 'capitalize' as const,
+                                cursor: 'pointer',
+                                textAlign: 'center' as const,
+                                margin: 0,
+                                padding: '12px 8px',
+                                fontSize: '14px'
+                            }}
+                        >
+                            <input 
+                                type="radio" 
+                                name="image-source-provider" 
+                                value={provider} 
+                                checked={currentSettings.imageSourceProvider === provider} 
+                                onChange={(e) => handleSettingChange('imageSourceProvider', e.target.value as ImageSourceProvider)} 
+                                style={{ display: 'none' }}
+                            />
+                            {provider === 'ai' ? 'AI Generated' : provider}
+                        </label>
+                   ))}
+                </div>
+
+                {/* Crop control moved inside this card for better grouping */}
+                <div className="aicoagac-form-group" style={{ marginTop: '8px', marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <button
+                            type="button"
+                            onClick={() => handleSettingChange('imageCropEnabled', !currentSettings.imageCropEnabled)}
+                            aria-pressed={!!currentSettings.imageCropEnabled}
+                            className="aicoagac-toggle"
+                            style={{
+                                width: '42px', height: '24px', borderRadius: '999px', border: '1px solid #ccd0d4',
+                                background: currentSettings.imageCropEnabled ? '#00a32a' : '#f0f0f1',
+                                position: 'relative', transition: 'all .2s'
+                            }}
+                        >
+                            <span style={{
+                                position: 'absolute', top: '2px', left: currentSettings.imageCropEnabled ? '20px' : '2px',
+                                width: '20px', height: '20px', borderRadius: '50%', background: '#fff',
+                                boxShadow: '0 1px 2px rgba(0,0,0,0.1)', transition: 'left .2s'
+                            }} />
+                        </button>
+                        <div>
+                            <span className="aicoagac-label">Enforce 16:9 aspect ratio</span>
+                            <p className="aicoagac-page-description" style={{ marginTop: '5px', margin: '5px 0 0 0' }}>
+                                Crops images to 16:9 without resizing (no quality loss). Ensures consistent featured image framing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Provider-specific settings */}
+                {currentSettings.imageSourceProvider === 'ai' && (
+                    <div className="aicoagac-fade-in">
+                        <div className="aicoagac-form-group">
+                            <label htmlFor="ai-image-style" className="aicoagac-label">AI Image Style</label>
+                            <select 
+                                id="ai-image-style" 
+                                value={currentSettings.aiImageStyle} 
+                                onChange={(e) => handleSettingChange('aiImageStyle', e.target.value as AiImageStyle)} 
+                                className="aicoagac-input"
+                                style={{ maxWidth: '200px' }}
+                            >
+                                <option value="photorealistic">Photorealistic</option>
+                                <option value="digital_art">Digital Art</option>
+                            </select>
+                        </div>
+                        
+                        <div className="aicoagac-form-group">
+                            <label htmlFor="google-cloud-project-id" className="aicoagac-label">Google Cloud Project ID</label>
+                            <input 
+                                id="google-cloud-project-id" 
+                                type="text" 
+                                placeholder="Enter your Google Cloud Project ID" 
+                                value={currentSettings.googleCloudProjectId || ''} 
+                                onChange={e => handleSettingChange('googleCloudProjectId', e.target.value)} 
+                                className="aicoagac-input"
+                            />
+                            <p className="aicoagac-page-description" style={{ marginTop: '8px', fontSize: '13px' }}>
+                                Required for AI image generation using Google's Imagen API
+                            </p>
+                        </div>
+                        
+                        <div className="aicoagac-form-group">
+                            <label htmlFor="google-cloud-location" className="aicoagac-label">Google Cloud Location</label>
+                            <select 
+                                id="google-cloud-location" 
+                                value={currentSettings.googleCloudLocation || 'us-central1'} 
+                                onChange={(e) => handleSettingChange('googleCloudLocation', e.target.value)} 
+                                className="aicoagac-input"
+                                style={{ maxWidth: '200px' }}
+                            >
+                                <option value="us-central1">us-central1</option>
+                                <option value="us-east1">us-east1</option>
+                                <option value="us-west1">us-west1</option>
+                                <option value="europe-west1">europe-west1</option>
+                                <option value="asia-southeast1">asia-southeast1</option>
+                            </select>
+                            <p className="aicoagac-page-description" style={{ marginTop: '8px', fontSize: '13px' }}>
+                                Choose the Google Cloud region closest to your users
+                            </p>
+                        </div>
+                        
+                        <a 
+                            href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/overview" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="aicoagac-page-description"
+                            style={{ 
+                                color: '#0073aa', 
+                                textDecoration: 'none', 
+                                marginTop: '8px', 
+                                display: 'block' 
+                            }}
+                        >
+                            → Learn how to set up Google Cloud Vertex AI for Imagen
+                        </a>
+                    </div>
+                )}
+                
+                {currentSettings.imageSourceProvider === 'pexels' && (
+                    <div className="aicoagac-form-group aicoagac-fade-in">
+                        <label htmlFor="pexels-api-key" className="aicoagac-label">Pexels API Key</label>
+                        <input 
+                            id="pexels-api-key" 
+                            type="password" 
+                            placeholder="Enter Pexels API Key" 
+                            value={currentSettings.pexelsApiKey} 
+                            onChange={e => handleSettingChange('pexelsApiKey', e.target.value)} 
+                            className="aicoagac-input"
+                        />
+                        <a 
+                            href="https://www.pexels.com/api/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="aicoagac-page-description"
+                            style={{ 
+                                color: '#0073aa', 
+                                textDecoration: 'none', 
+                                marginTop: '8px', 
+                                display: 'block' 
+                            }}
+                        >
+                            → Get your Pexels API key
+                        </a>
+                    </div>
+                )}
+                
+                {currentSettings.imageSourceProvider === 'unsplash' && (
+                    <div className="aicoagac-form-group aicoagac-fade-in">
+                        <label htmlFor="unsplash-api-key" className="aicoagac-label">Unsplash Access Key</label>
+                        <input 
+                            id="unsplash-api-key" 
+                            type="password" 
+                            placeholder="Enter Unsplash Access Key" 
+                            value={currentSettings.unsplashApiKey} 
+                            onChange={e => handleSettingChange('unsplashApiKey', e.target.value)} 
+                            className="aicoagac-input"
+                        />
+                        <a 
+                            href="https://unsplash.com/developers" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="aicoagac-page-description"
+                            style={{ 
+                                color: '#0073aa', 
+                                textDecoration: 'none', 
+                                marginTop: '8px', 
+                                display: 'block' 
+                            }}
+                        >
+                            → Get your Unsplash Access key
+                        </a>
+                    </div>
+                )}
+                
+                {currentSettings.imageSourceProvider === 'pixabay' && (
+                    <div className="aicoagac-form-group aicoagac-fade-in">
+                        <label htmlFor="pixabay-api-key" className="aicoagac-label">Pixabay API Key</label>
+                        <input 
+                            id="pixabay-api-key" 
+                            type="password" 
+                            placeholder="Enter Pixabay API Key" 
+                            value={currentSettings.pixabayApiKey} 
+                            onChange={e => handleSettingChange('pixabayApiKey', e.target.value)} 
+                            className="aicoagac-input"
+                        />
+                        <a 
+                            href="https://pixabay.com/api/docs/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="aicoagac-page-description"
+                            style={{ 
+                                color: '#0073aa', 
+                                textDecoration: 'none', 
+                                marginTop: '8px', 
+                                display: 'block' 
+                            }}
+                        >
+                            → Get your Pixabay API key
+                        </a>
+                    </div>
+                )}
+            </IntegrationCard>
+
+        </SettingsLayout>
+    );
+};

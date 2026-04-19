@@ -1,0 +1,1416 @@
+/* WordPress Admin Compatible Styles for AI Content Agent (ACA) */
+
+/* Remove Tailwind CDN import and create custom WordPress-compatible styles */
+/* @import 'https://cdn.tailwindcss.com'; */
+
+/* Reset and base styles for WordPress compatibility */
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #f0f0f1 !important;
+  color: #1e1e1e !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  font-size: 13px;
+}
+
+.wp-admin #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #f0f0f1 !important;
+}
+
+.wp-admin #root * {
+  box-sizing: border-box;
+}
+
+/* Main container */
+.aicoagac-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f0f0f1;
+}
+
+/* Sidebar styles */
+.aicoagac-sidebar {
+  width: 240px;
+  background: #23282d;
+  border-right: 1px solid #ccd0d4;
+  position: fixed;
+  top: var(--wp-admin-bar-height, 32px);
+  left: 160px;
+  z-index: 9999;
+  overflow-y: auto; /* Allow internal scrolling */
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  height: calc(100vh - var(--wp-admin-bar-height, 32px));
+}
+
+.aicoagac-sidebar.open {
+  transform: translateX(0);
+}
+
+.aicoagac-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #32373c;
+}
+
+.aicoagac-sidebar-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.aicoagac-sidebar-subtitle {
+  color: #a7aaad;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.aicoagac-sidebar-subtitle:hover {
+  color: #00a0d2;
+}
+
+.aicoagac-sidebar-nav {
+  padding: 10px 0;
+}
+
+.aicoagac-nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  color: #a7aaad;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aicoagac-nav-item:hover {
+  background: #32373c;
+  color: #ffffff;
+}
+
+.aicoagac-nav-item.active {
+  background: #0073aa;
+  color: #ffffff;
+}
+
+.aicoagac-nav-item-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  fill: currentColor;
+}
+
+/* Fix for icons in main content area - they should be blue, not black */
+.aicoagac-main .aicoagac-nav-item-icon {
+  fill: #0073aa;
+}
+
+/* Icons in buttons should be white */
+.aicoagac-button .aicoagac-nav-item-icon {
+  fill: #ffffff;
+}
+
+/* Icons in secondary buttons should be blue */
+.aicoagac-button.secondary .aicoagac-nav-item-icon {
+  fill: #0073aa;
+}
+
+/* Icons in list items should be blue */
+.aicoagac-list-item .aicoagac-nav-item-icon {
+  fill: #0073aa;
+}
+
+/* Enhanced icon contrast for dark backgrounds */
+.aicoagac-sidebar .aicoagac-nav-item-icon {
+  fill: #a7aaad;
+  transition: fill 0.2s ease;
+}
+
+.aicoagac-sidebar .aicoagac-nav-item:hover .aicoagac-nav-item-icon {
+  fill: #ffffff;
+}
+
+.aicoagac-sidebar .aicoagac-nav-item.active .aicoagac-nav-item-icon {
+  fill: #ffffff;
+}
+
+/* Icon contrast fixes for dark card backgrounds */
+.aicoagac-card[style*="background: #23282d"] .aicoagac-nav-item-icon,
+.aicoagac-card[style*="background:#23282d"] .aicoagac-nav-item-icon {
+  fill: #ffffff !important;
+}
+
+/* Icon contrast for buttons on dark backgrounds */
+.aicoagac-button.secondary[style*="background: #23282d"] .aicoagac-nav-item-icon,
+.aicoagac-button.secondary[style*="background:#23282d"] .aicoagac-nav-item-icon {
+  fill: #ffffff !important;
+}
+
+/* Better contrast for disabled buttons */
+.aicoagac-button:disabled .aicoagac-nav-item-icon {
+  fill: #a7aaad;
+}
+
+/* Ensure good contrast for all icon contexts */
+.aicoagac-nav-item-icon {
+  filter: contrast(1.2);
+}
+
+/* Special handling for stroke-based icons in secondary buttons */
+.aicoagac-button.secondary .aicoagac-nav-item-icon {
+  fill: #0073aa;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.aicoagac-button.secondary:hover .aicoagac-nav-item-icon {
+  fill: #005a87;
+  stroke: currentColor;
+}
+
+/* Toast notification icons */
+.aicoagac-toast .aicoagac-nav-item-icon {
+  fill: currentColor;
+  filter: brightness(1.1);
+}
+
+/* Dashboard action button icons - fix alignment and colors */
+.aicoagac-action-button .aicoagac-action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px auto;
+  background: #f0f6ff;
+  border-radius: 8px;
+}
+
+.aicoagac-action-button .aicoagac-action-icon svg {
+  fill: #0073aa !important;
+  width: 24px;
+  height: 24px;
+}
+
+.aicoagac-action-button:hover .aicoagac-action-icon {
+  background: #e3f2fd;
+}
+
+.aicoagac-action-button:hover .aicoagac-action-icon svg {
+  fill: #005a87 !important;
+}
+
+/* Pipeline item icons - fix alignment and colors */
+.aicoagac-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f0f6ff;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.aicoagac-stat-icon svg {
+  fill: #0073aa !important;
+  width: 20px;
+  height: 20px;
+}
+
+/* Main content area */
+.aicoagac-main {
+  flex: 1;
+  /* This margin is handled by the #root container's fixed positioning */
+  padding: 20px;
+  background: #f0f0f1;
+  min-height: 100vh;
+}
+
+@media (min-width: 783px) {
+  .aicoagac-sidebar {
+    transform: translateX(0); /* Show sidebar on desktop */
+  }
+  
+  .aicoagac-main {
+    margin-left: 240px; /* Sidebar width exactly - border creates 1px gap */
+    padding: 20px;
+  }
+}
+
+/* Auto-fold adjustments for collapsed WordPress menu */
+body.auto-fold .aicoagac-sidebar {
+  left: 36px !important; /* Collapsed WP menu width */
+}
+
+body.auto-fold .aicoagac-main {
+  margin-left: 240px !important; /* Sidebar width exactly - border creates 1px gap */
+}
+
+/* Static positioning makes auto-fold adjustments unnecessary - flexbox handles everything */
+
+/* Mobile header */
+.aicoagac-mobile-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #23282d;
+  border-bottom: 1px solid #ccd0d4;
+  margin: -20px -20px 20px -20px;
+}
+
+@media (min-width: 783px) {
+  .aicoagac-mobile-header {
+    display: none;
+  }
+}
+
+.aicoagac-menu-toggle {
+  background: none;
+  border: none;
+  color: #a7aaad;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.aicoagac-menu-toggle:hover {
+  color: #ffffff;
+}
+
+/* Page header */
+.aicoagac-page-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccd0d4;
+}
+
+.aicoagac-page-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #23282d;
+  margin: 0 0 10px 0;
+}
+
+.aicoagac-page-description {
+  color: #646970;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Cards and containers */
+.aicoagac-card {
+  background: #ffffff;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.aicoagac-card-header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.aicoagac-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #23282d;
+  margin: 0;
+}
+
+/* Grid layouts */
+.aicoagac-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.aicoagac-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.aicoagac-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.aicoagac-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Buttons */
+.aicoagac-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid #0073aa;
+  background: #0073aa;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Pagination overrides: ensure black text on light backgrounds */
+.aicoagac-pagination .aicoagac-button {
+  color: #000000 !important;
+}
+.aicoagac-pagination .aicoagac-button:disabled {
+  color: #000000 !important;
+}
+/* On hover, use blue text for contrast */
+.aicoagac-pagination .aicoagac-button:hover {
+  color: #2563eb !important; /* blue-600 */
+}
+
+.aicoagac-button:hover {
+  background: #005a87;
+  border-color: #005a87;
+  color: #ffffff !important;
+}
+
+.aicoagac-button:focus {
+  box-shadow: 0 0 0 2px #0073aa40;
+  outline: none;
+}
+
+.aicoagac-button.secondary {
+  background: #ffffff;
+  color: #0073aa !important;
+  border-color: #0073aa;
+}
+
+.aicoagac-button.secondary:hover {
+  background: #f6f7f7;
+  color: #005a87 !important;
+}
+
+.aicoagac-button.large {
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.aicoagac-button:disabled {
+  background: #f6f7f7 !important;
+  border-color: #dcdcde;
+  color: #a7aaad !important;
+  cursor: not-allowed;
+}
+
+/* High-contrast variant for Add to Queue state */
+.aicoagac-button.queue-add {
+  background: #eef2ff !important; /* indigo-100 */
+  border-color: #c7d2fe !important; /* indigo-200 */
+  color: #3730a3 !important; /* indigo-800 */
+}
+
+.aicoagac-button.queue-add:hover {
+  background: #e0e7ff !important; /* indigo-200 */
+  border-color: #a5b4fc !important; /* indigo-300 */
+  color: #312e81 !important; /* indigo-900 */
+}
+
+/* Form elements */
+.aicoagac-form-group {
+  margin-bottom: 20px;
+}
+
+.aicoagac-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #23282d;
+}
+
+.aicoagac-input,
+.aicoagac-textarea,
+.aicoagac-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  font-size: 13px;
+  background: #ffffff;
+  color: #2c3338;
+}
+
+.aicoagac-input:focus,
+.aicoagac-textarea:focus,
+.aicoagac-select:focus {
+  border-color: #0073aa;
+  box-shadow: 0 0 0 2px #0073aa40;
+  outline: none;
+}
+
+/* Alert/notification styles */
+.aicoagac-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 4px solid;
+  border-radius: 0 4px 4px 0;
+}
+
+.aicoagac-alert.success {
+  background: #f0f6fc;
+  border-color: #00a32a;
+  color: #00a32a;
+}
+
+.aicoagac-alert.error {
+  background: #fcf0f1;
+  border-color: #d63638;
+  color: #d63638;
+}
+
+.aicoagac-alert.warning {
+  background: #fcf9e8;
+  border-color: #dba617;
+  color: #dba617;
+}
+
+.aicoagac-alert.info {
+  background: #f0f6fc;
+  border-color: #0073aa;
+  color: #0073aa;
+}
+
+/* Loading spinner */
+.aicoagac-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #0073aa;
+  border-radius: 50%;
+  animation: aicoagac-spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes aicoagac-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Stats/dashboard items */
+.aicoagac-stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: #f6f7f7;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.aicoagac-stat-info {
+  display: flex;
+  align-items: center;
+}
+
+.aicoagac-stat-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  fill: #0073aa;
+}
+
+.aicoagac-stat-title {
+  font-weight: 600;
+  color: #23282d;
+  margin: 0 0 2px 0;
+}
+
+.aicoagac-stat-count {
+  color: #646970;
+  font-size: 12px;
+}
+
+/* Action buttons */
+.aicoagac-action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.aicoagac-action-button:hover {
+  border-color: #0073aa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.aicoagac-action-icon {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  background: #0073aa;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  fill: #ffffff;
+}
+
+.aicoagac-action-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #23282d;
+  margin: 0 0 5px 0;
+}
+
+.aicoagac-action-description {
+  color: #646970;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* List items */
+.aicoagac-list {
+  background: #ffffff;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.aicoagac-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.aicoagac-list-item:last-child {
+  border-bottom: none;
+}
+
+.aicoagac-list-item:hover {
+  background: #f6f7f7;
+}
+
+/* Overlay for mobile sidebar */
+.aicoagac-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
+}
+
+.aicoagac-overlay.show {
+  display: block;
+}
+
+@media (max-width: 782px) {
+  .aicoagac-sidebar {
+    z-index: 9999;
+  }
+}
+
+/* Modern animation classes */
+.aicoagac-fade-in {
+  animation: aicoagac-fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aicoagac-slide-up {
+  animation: aicoagac-slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aicoagac-scale-in {
+  animation: aicoagac-scale-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes aicoagac-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aicoagac-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aicoagac-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Toast notifications */
+.aicoagac-toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  max-width: 400px;
+}
+
+.aicoagac-toast {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: aicoagac-toast-slide-in 0.3s ease-out;
+}
+
+.aicoagac-toast.success {
+  background: #00a32a;
+  color: #ffffff;
+}
+
+.aicoagac-toast.error {
+  background: #d63638;
+  color: #ffffff;
+}
+
+.aicoagac-toast.warning {
+  background: #dba617;
+  color: #ffffff;
+}
+
+.aicoagac-toast.info {
+  background: #0073aa;
+  color: #ffffff;
+}
+
+@keyframes aicoagac-toast-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes aicoagac-toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3c4c7;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a7aaad;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .aicoagac-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  .aicoagac-welcome-section {
+    padding: 25px !important;
+  }
+  
+  .aicoagac-welcome-section h1 {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .aicoagac-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .aicoagac-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .aicoagac-welcome-section {
+    padding: 20px !important;
+  }
+  
+  .aicoagac-welcome-section h1 {
+    font-size: 22px !important;
+  }
+  
+  .aicoagac-sidebar-header {
+    padding: 15px !important;
+  }
+  
+  .aicoagac-sidebar-nav {
+    padding: 0 12px !important;
+  }
+}
+
+@media (max-width: 782px) {
+  .aicoagac-main {
+    margin-left: 0 !important; /* Reset sidebar margin on mobile */
+    padding: 15px;
+  }
+  
+  .aicoagac-grid-2,
+  .aicoagac-grid-3,
+  .aicoagac-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .aicoagac-card {
+    padding: 15px;
+  }
+  
+  /* Mobile-first welcome section */
+  .aicoagac-welcome-section {
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .aicoagac-welcome-section h1 {
+    font-size: 20px !important;
+  }
+  
+  .aicoagac-welcome-section p {
+    font-size: 14px !important;
+  }
+  
+  /* Mobile sidebar improvements */
+  .aicoagac-sidebar {
+    width: 100% !important;
+    max-width: 320px;
+    left: 0 !important; /* Full left on mobile */
+    top: 46px !important; /* Mobile admin bar height */
+    height: calc(100vh - 46px) !important; /* Fixed height on mobile */
+  }
+  
+  .aicoagac-sidebar-header {
+    padding: 15px !important;
+  }
+  
+  .aicoagac-sidebar-header h1 {
+    font-size: 16px !important;
+  }
+  
+  .aicoagac-sidebar-nav {
+    padding: 0 12px !important;
+  }
+  
+  /* Mobile toast positioning */
+  .aicoagac-toast-container {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    max-width: none !important;
+  }
+  
+  /* Mobile button improvements */
+  .aicoagac-button {
+    min-height: 44px;
+    font-size: 14px;
+  }
+  
+  .aicoagac-action-button {
+    min-height: 120px;
+  }
+  
+  /* Mobile form improvements */
+  .aicoagac-input,
+  .aicoagac-textarea,
+  .aicoagac-select {
+    min-height: 44px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .aicoagac-main {
+    padding: 10px;
+  }
+  
+  .aicoagac-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .aicoagac-welcome-section {
+    padding: 15px !important;
+  }
+  
+  .aicoagac-welcome-section h1 {
+    font-size: 18px !important;
+  }
+  
+  .aicoagac-welcome-section div[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  /* Ultra-mobile optimizations */
+  .aicoagac-button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .aicoagac-grid {
+    gap: 10px !important;
+  }
+}
+
+/* Accessibility Enhancements */
+/* Focus indicators */
+.aicoagac-button:focus,
+.aicoagac-input:focus,
+.aicoagac-textarea:focus,
+.aicoagac-select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .aicoagac-button {
+    border-width: 2px;
+  }
+  
+  .aicoagac-card {
+    border-width: 2px;
+  }
+  
+  .aicoagac-nav-item {
+    border: 1px solid transparent;
+  }
+  
+  .aicoagac-nav-item.active {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .aicoagac-spinner::before,
+  .aicoagac-spinner::after {
+    animation: none;
+  }
+  
+  .aicoagac-pulse {
+    animation: none;
+  }
+  
+  .aicoagac-skeleton {
+    animation: none;
+    background: #f0f0f0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .aicoagac-skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
+
+/* Touch target improvements */
+@media (pointer: coarse) {
+  .aicoagac-button,
+  .aicoagac-nav-item,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .aicoagac-input,
+  .aicoagac-textarea,
+  .aicoagac-select {
+    min-height: 44px;
+  }
+}
+
+/* WordPress admin bar compatibility */
+@media screen and (min-width: 783px) {
+  .wp-admin #root {
+    margin-top: 0;
+  }
+}
+
+/* AGGRESSIVE WORDPRESS ADMIN NOTIFICATIONS HIDING */
+/* Hide all WordPress admin notices/notifications on plugin page */
+body.toplevel_page_ai-content-agent .notice,
+body.toplevel_page_ai-content-agent .updated,
+body.toplevel_page_ai-content-agent .error,
+body.toplevel_page_ai-content-agent .notice-warning,
+body.toplevel_page_ai-content-agent .notice-error,
+body.toplevel_page_ai-content-agent .notice-success,
+body.toplevel_page_ai-content-agent .notice-info,
+body.toplevel_page_ai-content-agent .update-nag,
+body.toplevel_page_ai-content-agent .admin-notice,
+body.toplevel_page_ai-content-agent .plugin-update-tr,
+body.toplevel_page_ai-content-agent .update-message,
+body.toplevel_page_ai-content-agent .wp-admin-notice,
+body.toplevel_page_ai-content-agent .notice-dismiss,
+body.toplevel_page_ai-content-agent .is-dismissible,
+body.toplevel_page_ai-content-agent #wpbody-content > .notice,
+body.toplevel_page_ai-content-agent #wpbody-content > .updated,
+body.toplevel_page_ai-content-agent #wpbody-content > .error,
+body.toplevel_page_ai-content-agent .wrap > .notice,
+body.toplevel_page_ai-content-agent .wrap > .updated,
+body.toplevel_page_ai-content-agent .wrap > .error,
+body.toplevel_page_ai-content-agent #wpbody-content > div[class*="notice"],
+body.toplevel_page_ai-content-agent #wpbody-content > div[class*="updated"],
+body.toplevel_page_ai-content-agent #wpbody-content > div[class*="error"],
+body.toplevel_page_ai-content-agent #wpbody-content > div[id*="message"],
+body.toplevel_page_ai-content-agent #wpbody-content > div[id*="notice"],
+body.toplevel_page_ai-content-agent #wpbody-content > *:not(#root) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/* Allow our own plugin notices to show if needed */
+body.toplevel_page_ai-content-agent #root .notice,
+body.toplevel_page_ai-content-agent #root .error,
+body.toplevel_page_ai-content-agent #root .updated,
+body.toplevel_page_ai-content-agent .aicoagac-notice {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+
+/* CALENDAR OVERFLOW AND LAYOUT FIXES */
+/* Fix calendar container overflow issues */
+body.toplevel_page_ai-content-agent .aicoagac-main {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Calendar grid container fixes */
+body.toplevel_page_ai-content-agent .aicoagac-card {
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Calendar day cells overflow control */
+body.toplevel_page_ai-content-agent .aicoagac-card-content > div[style*="display: grid"] > div {
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Post items in calendar cells - prevent overflow */
+body.toplevel_page_ai-content-agent .aicoagac-card-content div[style*="flex-direction: column"] > div {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  word-break: break-word !important;
+}
+
+/* Ensure calendar doesn't exceed main content bounds */
+body.toplevel_page_ai-content-agent .aicoagac-card-content {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  max-width: 100% !important;
+}
+
+/* SETTINGS DROPDOWN SMOOTH BEHAVIOR */
+/* Prevent scroll jump on collapsible sections - disable smooth for fixed position */
+body.toplevel_page_ai-content-agent {
+  scroll-behavior: auto !important;
+}
+
+/* Apply smooth behavior only to our container, not the whole page */
+body.toplevel_page_ai-content-agent #root {
+  scroll-behavior: smooth !important;
+}
+
+/* Bu sınıf eklendiğinde anlık scroll geçişi sağlar */
+body.toplevel_page_ai-content-agent #root.no-smooth-scroll {
+  scroll-behavior: auto !important;
+}
+
+/* Optimize collapsible section transitions */
+body.toplevel_page_ai-content-agent .aicoagac-card [id^="section-content-"] {
+  transform-origin: top !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: transform, opacity !important;
+  contain: layout style paint !important;
+}
+
+/* Prevent layout shifts during transitions */
+body.toplevel_page_ai-content-agent .aicoagac-card {
+  contain: layout !important;
+}
+
+/* Smooth transitions without affecting scroll */
+body.toplevel_page_ai-content-agent .aicoagac-card [id^="section-content-"] * {
+  will-change: auto !important;
+}
+
+/* Smooth header click behavior */
+body.toplevel_page_ai-content-agent .aicoagac-card-header[role="button"] {
+  transition: background-color 0.2s ease !important;
+}
+
+body.toplevel_page_ai-content-agent .aicoagac-card-header[role="button"]:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+body.toplevel_page_ai-content-agent .aicoagac-card-header[role="button"]:active {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(1px) !important;
+  transition: all 0.1s ease !important;
+}
+
+/* Progress bar animation for loading states */
+@keyframes aicoagac-progress-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* Enhanced loading states */
+.aicoagac-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed !important;
+}
+
+.aicoagac-button.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.aicoagac-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: aicoagac-shimmer 1.5s infinite;
+}
+
+@keyframes aicoagac-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Modern spinner animations */
+.aicoagac-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.aicoagac-spinner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid #3b82f6;
+  border-right: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: aicoagac-spin-modern 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.aicoagac-spinner::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 2px solid transparent;
+  border-top: 2px solid #60a5fa;
+  border-radius: 50%;
+  animation: aicoagac-spin-modern 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite reverse;
+}
+
+@keyframes aicoagac-spin-modern {
+  0% { 
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% { 
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Pulse loading animation */
+.aicoagac-pulse {
+  animation: aicoagac-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes aicoagac-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Skeleton loading */
+.aicoagac-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: aicoagac-skeleton-loading 1.5s infinite;
+}
+
+@keyframes aicoagac-skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Loading overlay for cards */
+.aicoagac-card.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.aicoagac-card.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  border-radius: 6px;
+}
+
+.aicoagac-card.loading::after {
+  content: 'Processing...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  font-size: 14px;
+  color: #0073aa;
+  font-weight: 500;
+}
+
+/* WordPress Admin Bar Compatibility */
+@media screen and (max-width: 782px) {
+  .wp-admin .aicoagac-sidebar {
+    left: 0 !important; /* Full left on mobile */
+    top: 46px !important; /* Mobile admin bar height */
+    height: calc(100vh - 46px) !important;
+  }
+}
+
+@media screen and (min-width: 783px) {
+  .wp-admin .aicoagac-sidebar {
+    left: 160px !important; /* Right next to WordPress admin menu */
+    top: 32px !important; /* Desktop admin bar height */
+    height: calc(100vh - 32px) !important;
+  }
+}
+
+/* No admin bar fallback */
+.no-admin-bar .aicoagac-sidebar {
+  left: 160px !important; /* Right next to WordPress admin menu */
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+/* Fix for WordPress clear divs causing unwanted spacing - More specific selectors */
+body.toplevel_page_ai-content-agent #wpbody-content > .clear,
+body.toplevel_page_ai-content-agent #wpbody > .clear,
+body.toplevel_page_ai-content-agent .clear {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Additional fix for screen-meta and other spacing issues */
+body.toplevel_page_ai-content-agent #screen-meta {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* COMPREHENSIVE WORDPRESS ADMIN OVERRIDE - Remove ALL spacing */
+body.toplevel_page_ai-content-agent #wpbody-content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.toplevel_page_ai-content-agent #wpbody {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.toplevel_page_ai-content-agent #wpcontent {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Ensure our root element takes full space and overrides everything */
+body.toplevel_page_ai-content-agent #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: calc(100% - 160px) !important; /* Account for WordPress admin menu */
+  height: calc(100vh - 32px) !important; /* Account for WordPress admin bar */
+  position: fixed !important;
+  top: 32px !important; /* Account for WordPress admin bar */
+  left: 160px !important; /* Right next to WordPress admin menu */
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 999999 !important;
+  background: #f0f0f1 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Prevent page jumping when Settings dropdowns open */
+body.toplevel_page_ai-content-agent #root .aicoagac-main {
+  max-height: calc(100vh - 32px) !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+}
+
+/* Responsive WordPress admin menu adjustments */
+@media screen and (max-width: 960px) and (min-width: 783px) {
+  /* Collapsed WordPress menu adjustments */
+  .aicoagac-sidebar {
+    left: 36px !important; /* Collapsed WordPress menu width */
+  }
+  
+  /* Flexbox handles main content positioning automatically */
+  
+  body.toplevel_page_ai-content-agent #root {
+    width: calc(100% - 36px) !important; /* Collapsed menu width */
+    left: 36px !important; /* Collapsed menu width */
+    height: calc(100vh - 32px) !important;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  body.toplevel_page_ai-content-agent #root {
+    width: 100% !important; /* Mobile: no side menu */
+    left: 0 !important;
+    height: calc(100vh - 46px) !important; /* Mobile admin bar is taller */
+    top: 46px !important;
+  }
+}
+
+/* Make our container take full space and override WordPress */
+body.toplevel_page_ai-content-agent .aicoagac-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  position: relative !important;
+  display: flex !important;
+  background: #f0f0f1 !important;
+}
+
+/* Hide WordPress admin footer elements on plugin page */
+body.toplevel_page_ai-content-agent #footer-thankyou,
+body.toplevel_page_ai-content-agent #footer-upgrade,
+body.toplevel_page_ai-content-agent #wpfooter {
+  display: none !important;
+}
