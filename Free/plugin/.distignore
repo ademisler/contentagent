@@ -1,0 +1,27 @@
+# Exclude development, build, and repository files from distribution
+/node_modules/
+/dist/
+/tools/
+/scripts/
+/tests/
+/.git/
+/.github/
+/.gitignore
+/.gitattributes
+/.editorconfig
+/.vscode/
+/README.md
+/docs/*
+!/docs/README.md
+CHANGELOG.md
+
+composer.json
+composer.lock
+/vendor/
+**/*.map
+**/*.ts
+**/*.tsx
+**/*.test.*
+App.tsx
+index.tsx
+vite.config.ts
