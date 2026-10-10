@@ -1,0 +1,740 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Content Agent 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-26T18:52:24.038Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: ai-content-agent\n"
+
+#: ai-content-agent.php:184
+#: includes/class-aicoagac-rest-api.php:4966
+#: includes/class-aicoagac-rest-api.php:5058
+msgid "Unified & Reliable"
+msgstr ""
+
+#: ai-content-agent.php:235
+#: ai-content-agent.php:236
+msgid "AI Content Agent (ACA)"
+msgstr ""
+
+#: ai-content-agent.php:296
+msgid "Page"
+msgstr ""
+
+#: ai-content-agent.php:297
+msgid "of"
+msgstr ""
+
+#: ai-content-agent.php:298
+msgid "Prev"
+msgstr ""
+
+#: ai-content-agent.php:299
+msgid "Next"
+msgstr ""
+
+#: ai-content-agent.php:301
+msgid "Published Articles"
+msgstr ""
+
+#: ai-content-agent.php:302
+msgid "Your Published Content"
+msgstr ""
+
+#: ai-content-agent.php:303
+msgid "No Published Posts Yet"
+msgstr ""
+
+#: ai-content-agent.php:304
+msgid "Go to Drafts"
+msgstr ""
+
+#: ai-content-agent.php:305
+msgid "View Live Post"
+msgstr ""
+
+#: ai-content-agent.php:306
+msgid "Published Posts"
+msgstr ""
+
+#: ai-content-agent.php:307
+msgid "Your successful content publications"
+msgstr ""
+
+#: ai-content-agent.php:365
+#: ai-content-agent.php:365
+msgid "ACA Database Update Failed:"
+msgstr ""
+
+#: includes/class-aicoagac-activator.php:43
+msgid "AI Content Agent requires PHP 7.4 or higher. Current version: %s"
+msgstr ""
+
+#: includes/class-aicoagac-activator.php:46
+#: includes/class-aicoagac-activator.php:46
+#: includes/class-aicoagac-activator.php:70
+#: includes/class-aicoagac-activator.php:70
+#: includes/class-aicoagac-activator.php:92
+#: includes/class-aicoagac-activator.php:92
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: includes/class-aicoagac-activator.php:67
+msgid "AI Content Agent requires WordPress 5.0 or higher. Current version: %s"
+msgstr ""
+
+#: includes/class-aicoagac-activator.php:89
+msgid "AI Content Agent requires the following PHP extensions: %s"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:62
+msgid "Cache clear already in progress. Please wait a moment and try again."
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:75
+msgid "Cache clear skipped while tasks are running. Please try again in a moment."
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:82
+msgid "WordPress object cache (full)"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:85
+msgid "ACA-specific caches"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:98
+msgid "Option caches"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:128
+msgid "%d ACA transients"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:137
+msgid "Cron cache"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:141
+msgid "Asset version updated"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:146
+msgid "External cache plugin"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:158
+msgid "Cache cleared successfully!"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:168
+msgid "All caches cleared successfully"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:182
+msgid "Cache clear failed: %s"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:219
+#: includes/class-aicoagac-cache-manager.php:219
+#: includes/class-aicoagac-cache-manager.php:234
+#: includes/class-aicoagac-cache-manager.php:234
+msgid "AI Content Agent"
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:220
+#: includes/class-aicoagac-cache-manager.php:220
+msgid "Cache automatically cleared after updating settings."
+msgstr ""
+
+#: includes/class-aicoagac-cache-manager.php:238
+#: includes/class-aicoagac-cache-manager.php:238
+msgid "Cleared:"
+msgstr ""
+
+#: includes/class-aicoagac-migration-manager.php:35
+msgid "Migration failed: %s"
+msgstr ""
+
+#: includes/class-aicoagac-migration-manager.php:110
+msgid "Free Version"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:431
+msgid "Missing nonce header"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:439
+msgid "Invalid nonce"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:502
+msgid "Application settings were updated."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:515
+msgid "Settings must be an array"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:623
+msgid "API key for %s must be a string"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:632
+msgid "Invalid %1$s format - must be between 10-500 characters"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:705
+msgid "Invalid value for %1$s. Allowed values: %2$s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:737
+msgid "Max posts per day must be between 0-50"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:742
+msgid "Full auto daily post count must be between 1-10"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:749
+msgid "Invalid %1$s - must be positive integer"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:780
+#: includes/class-aicoagac-rest-api.php:966
+#: includes/class-aicoagac-rest-api.php:1120
+#: includes/class-aicoagac-rest-api.php:1589
+msgid "Google AI API Key is not set"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:792
+msgid "Invalid JSON response from AI service"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:798
+msgid "Style Guide automatically refreshed."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:798
+msgid "Style Guide was successfully updated."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:919
+msgid "Style Guide was manually edited and saved."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:970
+#: includes/class-aicoagac-rest-api.php:1593
+msgid "Style Guide is required"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1007
+#: includes/class-aicoagac-rest-api.php:1135
+msgid "Invalid response from AI service"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1046
+msgid "AI service returned no valid unique ideas"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1079
+msgid "Generated %d new content ideas."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1109
+#: includes/class-aicoagac-rest-api.php:1582
+msgid "Idea not found"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1167
+msgid "Generated %d similar ideas."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1189
+msgid "Idea title cannot be empty"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1195
+msgid "This idea title already exists"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1221
+msgid "Manually added idea: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1226
+msgid "Failed to save idea"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1251
+msgid "Updated idea title to \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1255
+msgid "Failed to update idea"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1287
+msgid "Archived idea: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1292
+msgid "Failed to archive idea"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1324
+msgid "Restored idea: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1329
+msgid "Failed to restore idea"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1360
+msgid "Permanently deleted idea: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1365
+msgid "Failed to permanently delete idea"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1477
+msgid "New date is required"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1486
+#: includes/class-aicoagac-rest-api.php:2125
+msgid "Post not found"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1512
+msgid "Post \"%1$s\" %2$s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1533
+msgid "Idea ID is required"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1557
+msgid "A fatal error occurred during draft creation: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1665
+msgid "Empty response from AI service"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1680
+msgid "Invalid JSON response from AI service after cleaning: "
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1689
+msgid "Invalid JSON response from AI service: "
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1696
+msgid "Missing required fields in AI response"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1701
+msgid "AI response content field must be string"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1704
+msgid "AI response metaTitle field must be string"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1707
+msgid "AI response metaDescription field must be string"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1733
+msgid "AI content generation failed: "
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1918
+msgid "Created draft: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:1946
+#: includes/class-aicoagac-rest-api.php:1969
+#: includes/class-aicoagac-rest-api.php:2000
+msgid "Draft created successfully"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2008
+msgid "DETAILED ERROR: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2058
+msgid "Updated draft: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2088
+msgid "Published post: \"%s\""
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2119
+msgid "Scheduled date is required"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2131
+msgid "Invalid date format"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2202
+msgid "Failed to schedule post: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2209
+msgid "Failed to update post - wp_update_post returned 0"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2215
+msgid "Post not found after update"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2223
+msgid "Scheduled draft: \"%1$s\" for %2$s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:2262
+msgid "Missing required parameters: type, message, icon"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3205
+msgid "Google Cloud Project ID not configured. Please set it in plugin settings."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3210
+msgid "Invalid Google Cloud API key. Please provide a valid service account key or access token."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3253
+msgid "Failed to connect to Google Imagen API: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3277
+msgid "Invalid response from Imagen API - missing image data"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3300
+msgid "Please provide a valid Google Cloud access token. For service account authentication, set up Application Default Credentials on your server or generate access tokens using: gcloud auth application-default print-access-token"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:3626
+msgid "Failed to detect SEO plugins: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4102
+msgid "SEO data successfully sent to RankMath"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4123
+msgid "Error sending to RankMath: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4256
+msgid "SEO data successfully sent to Yoast SEO"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4276
+msgid "Error sending to Yoast SEO: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4444
+msgid "SEO data successfully sent to All in One SEO"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4463
+msgid "Error sending to All in One SEO: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4503
+#: includes/class-aicoagac-rest-api.php:4620
+msgid "Failed to queue content update"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4509
+#: includes/class-aicoagac-rest-api.php:4626
+msgid "Content update queued successfully"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4793
+msgid "Test endpoint working"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4850
+msgid "Image generation is not currently available. Gemini API does not support image generation."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4862
+msgid "Failed to generate image: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4882
+msgid "Failed to get automation status: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4903
+msgid "Test automation triggered successfully"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4912
+msgid "Failed to test automation: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4951
+msgid "Migration Manager not available"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4974
+#: includes/class-aicoagac-rest-api.php:4975
+#: includes/class-aicoagac-rest-api.php:4976
+#: includes/class-aicoagac-rest-api.php:4977
+msgid "Not scheduled"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:4989
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5006
+msgid "Debug failed: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5025
+msgid "Queue Manager deprecated. Use REMOVED_AUTOMATION unified system."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5055
+msgid "Not available"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5075
+msgid "This endpoint is deprecated. Use /automation/status instead."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5082
+msgid "This endpoint is deprecated. Unified automation system does not use queues."
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5109
+msgid "Automation system not available"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5128
+msgid "Task scheduling triggered successfully"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5142
+msgid "Failed to trigger scheduling: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5241
+msgid "Test error: %s"
+msgstr ""
+
+#: includes/class-aicoagac-rest-api.php:5613
+msgid "Index backfill already in progress"
+msgstr ""
+
+#: tools/install-dependencies.php:73
+#: tools/install-dependencies.php:73
+#: tools/repair-database.php:28
+#: tools/repair-database.php:28
+msgid "Insufficient permissions"
+msgstr ""
+
+#: tools/install-dependencies.php:78
+#: tools/install-dependencies.php:78
+msgid "Security check failed"
+msgstr ""
+
+#: tools/install-dependencies.php:93
+msgid "exec() function is not available. Please install dependencies manually."
+msgstr ""
+
+#: tools/install-dependencies.php:110
+msgid "Dependencies installed successfully!"
+msgstr ""
+
+#: tools/install-dependencies.php:116
+msgid "Failed to install dependencies. Please install manually."
+msgstr ""
+
+#: tools/install-dependencies.php:128
+msgid "Manual Installation Instructions"
+msgstr ""
+
+#: tools/install-dependencies.php:130
+msgid "1. Connect to your server via SSH or FTP"
+msgstr ""
+
+#: tools/install-dependencies.php:131
+msgid "2. Navigate to: %s"
+msgstr ""
+
+#: tools/install-dependencies.php:132
+msgid "3. Run: composer install --no-dev --optimize-autoloader"
+msgstr ""
+
+#: tools/install-dependencies.php:133
+msgid "4. Alternatively, download dependencies manually from GitHub"
+msgstr ""
+
+#: tools/install-dependencies.php:134
+msgid "5. Refresh this page to check installation status"
+msgstr ""
+
+#: tools/install-dependencies.php:137
+msgid "Composer must be installed on your server"
+msgstr ""
+
+#: tools/install-dependencies.php:138
+msgid "PHP exec() function must be enabled"
+msgstr ""
+
+#: tools/install-dependencies.php:139
+msgid "Write permissions to the plugin directory"
+msgstr ""
+
+#: tools/install-dependencies.php:151
+#: tools/install-dependencies.php:151
+msgid "✅ Plugin Dependencies:"
+msgstr ""
+
+#: tools/install-dependencies.php:151
+#: tools/install-dependencies.php:151
+msgid "All required libraries are installed and ready."
+msgstr ""
+
+#: tools/install-dependencies.php:155
+#: tools/install-dependencies.php:155
+msgid "⚠️ Plugin Dependencies:"
+msgstr ""
+
+#: tools/install-dependencies.php:155
+#: tools/install-dependencies.php:155
+msgid "Required libraries are missing."
+msgstr ""
+
+#: tools/install-dependencies.php:158
+#: tools/install-dependencies.php:158
+msgid "Install Dependencies Automatically"
+msgstr ""
+
+#: tools/install-dependencies.php:160
+#: tools/install-dependencies.php:160
+msgid "Automatic installation is not available. Please install manually:"
+msgstr ""
+
+#: tools/install-dependencies.php:162
+#: tools/install-dependencies.php:162
+msgid "Connect to your server via SSH"
+msgstr ""
+
+#: tools/install-dependencies.php:163
+#: tools/install-dependencies.php:163
+msgid "Navigate to: %s"
+msgstr ""
+
+#: tools/install-dependencies.php:164
+#: tools/install-dependencies.php:164
+msgid "Run: "
+msgstr ""
+
+#: tools/install-dependencies.php:177
+msgid "Installing..."
+msgstr ""
+
+#: tools/install-dependencies.php:184
+msgid "✅ Installed Successfully"
+msgstr ""
+
+#: tools/install-dependencies.php:187
+#: tools/install-dependencies.php:194
+msgid "Install Dependencies"
+msgstr ""
+
+#: tools/install-dependencies.php:188
+msgid "Installation failed:"
+msgstr ""
+
+#: tools/install-dependencies.php:190
+msgid "Manual instructions:"
+msgstr ""
+
+#: tools/install-dependencies.php:195
+msgid "Installation request failed. Please try manual installation."
+msgstr ""
+
+#: tools/repair-database.php:16
+#: tools/repair-database.php:16
+msgid "WordPress not found. Please run this script from WordPress admin or place in plugin directory."
+msgstr ""
+
+#: tools/repair-database.php:34
+#: tools/repair-database.php:34
+msgid "AI Content Agent - Database Repair"
+msgstr ""
+
+#: tools/repair-database.php:43
+#: tools/repair-database.php:43
+msgid "Checking ideas table:"
+msgstr ""
+
+#: tools/repair-database.php:47
+#: tools/repair-database.php:47
+msgid "Creating ideas table..."
+msgstr ""
+
+#: tools/repair-database.php:58
+msgid "✅ Ideas table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:60
+#: tools/repair-database.php:60
+msgid "Ideas table exists, ensuring schema..."
+msgstr ""
+
+#: tools/repair-database.php:71
+msgid "✅ Ideas table schema verified"
+msgstr ""
+
+#: tools/repair-database.php:76
+#: tools/repair-database.php:76
+msgid "Checking activity logs table:"
+msgstr ""
+
+#: tools/repair-database.php:80
+#: tools/repair-database.php:80
+msgid "Creating activity logs table..."
+msgstr ""
+
+#: tools/repair-database.php:90
+msgid "✅ Activity logs table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:92
+msgid "✅ Activity logs table exists"
+msgstr ""
+
+#: tools/repair-database.php:107
+#: tools/repair-database.php:107
+msgid "Checking content updates table:"
+msgstr ""
+
+#: tools/repair-database.php:111
+#: tools/repair-database.php:111
+msgid "Creating content updates table..."
+msgstr ""
+
+#: tools/repair-database.php:125
+msgid "✅ Content updates table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:127
+msgid "✅ Content updates table exists"
+msgstr ""

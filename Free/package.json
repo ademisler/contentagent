@@ -1,0 +1,30 @@
+{
+  "name": "ai-content-agent-repo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix plugin run build:wp",
+    "pot": "npm --prefix plugin run make-pot",
+    "assets": "npm --prefix plugin run make-assets",
+    "release:min": "node scripts/release.cjs ${npm_config_version:-1.0.0}",
+    "release:min:tag": "node scripts/release.cjs $npm_package_version",
+    "deploy:svn": "./scripts/deploy-wporg.sh $SVN_DIR $npm_package_version",
+    "prepare": "husky install",
+    "lint:php": "composer run lint:php",
+    "lint:ts": "npx --no eslint plugin --ext .ts,.tsx",
+    "bump": "node scripts/bump-version.cjs"
+  },
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "eslint": "^9.8.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "eslint-plugin-react": "^7.35.0",
+    "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "plugin/**/*.{ts,tsx,js,css}": ["prettier --write"],
+    "plugin/**/*.php": ["composer run lint:php -- --report=emacs"]
+  }
+}

@@ -1,0 +1,847 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Content Agent 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-18T22:10:15.891Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: ai-content-agent\n"
+
+#: ai-content-agent.php:245
+#: includes/class-aca-migration-manager.php:209
+#: includes/class-aca-rest-api.php:5433
+#: includes/class-aca-rest-api.php:5520
+msgid "Unified & Reliable"
+msgstr ""
+
+#: ai-content-agent.php:296
+#: ai-content-agent.php:297
+msgid "AI Content Agent (ACA)"
+msgstr ""
+
+#: ai-content-agent.php:363
+msgid "Page"
+msgstr ""
+
+#: ai-content-agent.php:364
+msgid "of"
+msgstr ""
+
+#: ai-content-agent.php:365
+msgid "Prev"
+msgstr ""
+
+#: ai-content-agent.php:366
+msgid "Next"
+msgstr ""
+
+#: ai-content-agent.php:368
+msgid "Published Articles"
+msgstr ""
+
+#: ai-content-agent.php:369
+msgid "Your Published Content"
+msgstr ""
+
+#: ai-content-agent.php:370
+msgid "No Published Posts Yet"
+msgstr ""
+
+#: ai-content-agent.php:371
+msgid "Go to Drafts"
+msgstr ""
+
+#: ai-content-agent.php:372
+msgid "View Live Post"
+msgstr ""
+
+#: ai-content-agent.php:373
+msgid "Published Posts"
+msgstr ""
+
+#: ai-content-agent.php:374
+msgid "Your successful content publications"
+msgstr ""
+
+#: ai-content-agent.php:429
+#: ai-content-agent.php:429
+msgid "ACA Database Update Failed:"
+msgstr ""
+
+#: includes/class-aca-activator.php:56
+msgid "AI Content Agent requires PHP 7.4 or higher. Current version: %s"
+msgstr ""
+
+#: includes/class-aca-activator.php:59
+#: includes/class-aca-activator.php:59
+#: includes/class-aca-activator.php:74
+#: includes/class-aca-activator.php:74
+#: includes/class-aca-activator.php:96
+#: includes/class-aca-activator.php:96
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: includes/class-aca-activator.php:71
+msgid "AI Content Agent requires WordPress 5.0 or higher. Current version: %s"
+msgstr ""
+
+#: includes/class-aca-activator.php:93
+msgid "AI Content Agent requires the following PHP extensions: %s"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:64
+msgid "Cache clear already in progress. Please wait a moment and try again."
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:77
+msgid "Cache clear skipped while automation tasks are running. Please try again in a moment."
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:84
+msgid "WordPress object cache (full)"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:87
+msgid "ACA-specific caches"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:103
+msgid "Option caches"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:133
+msgid "%d ACA transients"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:142
+msgid "Cron cache"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:146
+msgid "Asset version updated"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:151
+msgid "External cache plugin"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:163
+msgid "Cache cleared successfully!"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:173
+msgid "All caches cleared successfully"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:187
+msgid "Cache clear failed: %s"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:224
+#: includes/class-aca-cache-manager.php:224
+#: includes/class-aca-cache-manager.php:239
+#: includes/class-aca-cache-manager.php:239
+msgid "AI Content Agent"
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:225
+#: includes/class-aca-cache-manager.php:225
+msgid "Cache automatically cleared after updating settings."
+msgstr ""
+
+#: includes/class-aca-cache-manager.php:243
+#: includes/class-aca-cache-manager.php:243
+msgid "Cleared:"
+msgstr ""
+
+#: includes/class-aca-migration-manager.php:39
+msgid "Migration failed: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:488
+msgid "Missing nonce header"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:496
+msgid "Invalid nonce"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:580
+msgid "Application settings were updated."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:593
+msgid "Settings must be an array"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:701
+msgid "API key for %s must be a string"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:710
+msgid "Invalid %1$s format - must be between 10-500 characters"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:783
+msgid "Invalid value for %1$s. Allowed values: %2$s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:815
+msgid "Max posts per day must be between 0-50"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:820
+msgid "Full auto daily post count must be between 1-10"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:827
+msgid "Invalid %1$s - must be positive integer"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:858
+#: includes/class-aca-rest-api.php:1044
+#: includes/class-aca-rest-api.php:1198
+#: includes/class-aca-rest-api.php:1667
+msgid "Google AI API Key is not set"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:870
+msgid "Invalid JSON response from AI service"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:876
+msgid "Style Guide automatically refreshed."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:876
+msgid "Style Guide was successfully updated."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:997
+msgid "Style Guide was manually edited and saved."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1048
+#: includes/class-aca-rest-api.php:1671
+msgid "Style Guide is required"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1085
+#: includes/class-aca-rest-api.php:1213
+msgid "Invalid response from AI service"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1124
+msgid "AI service returned no valid unique ideas"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1157
+msgid "Generated %d new content ideas."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1187
+#: includes/class-aca-rest-api.php:1660
+msgid "Idea not found"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1245
+msgid "Generated %d similar ideas."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1267
+msgid "Idea title cannot be empty"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1273
+msgid "This idea title already exists"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1299
+msgid "Manually added idea: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1304
+msgid "Failed to save idea"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1329
+msgid "Updated idea title to \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1333
+msgid "Failed to update idea"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1365
+msgid "Archived idea: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1370
+msgid "Failed to archive idea"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1402
+msgid "Restored idea: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1407
+msgid "Failed to restore idea"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1438
+msgid "Permanently deleted idea: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1443
+msgid "Failed to permanently delete idea"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1555
+msgid "New date is required"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1564
+#: includes/class-aca-rest-api.php:2203
+msgid "Post not found"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1590
+msgid "Post \"%1$s\" %2$s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1611
+msgid "Idea ID is required"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1635
+msgid "A fatal error occurred during draft creation: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1743
+msgid "Empty response from AI service"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1758
+msgid "Invalid JSON response from AI service after cleaning: "
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1767
+msgid "Invalid JSON response from AI service: "
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1774
+msgid "Missing required fields in AI response"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1779
+msgid "AI response content field must be string"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1782
+msgid "AI response metaTitle field must be string"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1785
+msgid "AI response metaDescription field must be string"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1811
+msgid "AI content generation failed: "
+msgstr ""
+
+#: includes/class-aca-rest-api.php:1996
+msgid "Created draft: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2024
+#: includes/class-aca-rest-api.php:2047
+#: includes/class-aca-rest-api.php:2078
+msgid "Draft created successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2086
+msgid "DETAILED ERROR: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2136
+msgid "Updated draft: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2166
+msgid "Published post: \"%s\""
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2197
+msgid "Scheduled date is required"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2209
+msgid "Invalid date format"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2280
+msgid "Failed to schedule post: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2287
+msgid "Failed to update post - wp_update_post returned 0"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2293
+msgid "Post not found after update"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2301
+msgid "Scheduled draft: \"%1$s\" for %2$s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:2340
+msgid "Missing required parameters: type, message, icon"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3283
+msgid "Google Cloud Project ID not configured. Please set it in plugin settings."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3288
+msgid "Invalid Google Cloud API key. Please provide a valid service account key or access token."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3331
+msgid "Failed to connect to Google Imagen API: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3355
+msgid "Invalid response from Imagen API - missing image data"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3378
+msgid "Please provide a valid Google Cloud access token. For service account authentication, set up Application Default Credentials on your server or generate access tokens using: gcloud auth application-default print-access-token"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3722
+msgid "Semi-automatic task manually triggered via Simple Automation"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3727
+msgid "Semi-automatic task executed successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3750
+msgid "Full-automatic task manually triggered via Simple Automation"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3755
+msgid "Full-automatic task executed successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:3788
+msgid "Failed to detect SEO plugins: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4264
+msgid "SEO data successfully sent to RankMath"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4285
+msgid "Error sending to RankMath: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4418
+msgid "SEO data successfully sent to Yoast SEO"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4438
+msgid "Error sending to Yoast SEO: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4606
+msgid "SEO data successfully sent to All in One SEO"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4625
+msgid "Error sending to All in One SEO: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4646
+msgid "License key is required"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4669
+msgid "This license is already active on another website. Each license can only be used on one site at a time. Please deactivate it from the other site first."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4694
+msgid "License verification failed. Please check your license key and try again."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4710
+msgid "License verification failed: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4753
+msgid "License deactivated successfully. You can now use this license on another site."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4762
+msgid "License deactivation failed: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4813
+msgid "Gumroad API request failed: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4831
+msgid "Gumroad API returned error code: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4846
+msgid "Invalid JSON response from Gumroad API"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4865
+msgid "Invalid Gumroad API response format"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4943
+msgid "License verified successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:4943
+msgid "License verification failed"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5021
+msgid "Failed to queue content update"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5027
+msgid "Content update queued successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5260
+msgid "Test endpoint working"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5317
+msgid "Image generation is not currently available. Gemini API does not support image generation."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5329
+msgid "Failed to generate image: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5349
+msgid "Failed to get automation status: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5370
+msgid "Test automation triggered successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5379
+msgid "Failed to test automation: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5418
+msgid "Migration Manager not available"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5441
+#: includes/class-aca-rest-api.php:5442
+#: includes/class-aca-rest-api.php:5443
+#: includes/class-aca-rest-api.php:5444
+msgid "Not scheduled"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5456
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5473
+msgid "Debug failed: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5492
+msgid "Queue Manager deprecated. Use ACA_Simple_Automation unified system."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5517
+msgid "Not available"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5537
+msgid "This endpoint is deprecated. Use /automation/status instead."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5544
+msgid "This endpoint is deprecated. Unified automation system does not use queues."
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5571
+msgid "Automation system not available"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5590
+msgid "Task scheduling triggered successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5604
+msgid "Failed to trigger scheduling: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5639
+msgid "License status refreshed successfully"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5654
+msgid "Failed to refresh license status: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:5751
+msgid "Test error: %s"
+msgstr ""
+
+#: includes/class-aca-rest-api.php:6123
+msgid "Index backfill already in progress"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:943
+msgid "Once Monthly"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:949
+msgid "Every 30 Minutes"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:954
+msgid "Every 4 Hours"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:959
+msgid "Every 6 Hours"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:964
+msgid "Every 12 Hours"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:1281
+msgid "Automation is disabled"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:1330
+msgid "Idea generation task executed successfully"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:1346
+msgid "Idea generation failed: %s"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:1368
+msgid "Maintenance task executed successfully"
+msgstr ""
+
+#: includes/class-aca-simple-automation.php:1443
+msgid "Log cleanup completed"
+msgstr ""
+
+#: tools/install-dependencies.php:73
+#: tools/install-dependencies.php:73
+#: tools/repair-database.php:28
+#: tools/repair-database.php:28
+msgid "Insufficient permissions"
+msgstr ""
+
+#: tools/install-dependencies.php:78
+#: tools/install-dependencies.php:78
+msgid "Security check failed"
+msgstr ""
+
+#: tools/install-dependencies.php:93
+msgid "exec() function is not available. Please install dependencies manually."
+msgstr ""
+
+#: tools/install-dependencies.php:110
+msgid "Dependencies installed successfully!"
+msgstr ""
+
+#: tools/install-dependencies.php:116
+msgid "Failed to install dependencies. Please install manually."
+msgstr ""
+
+#: tools/install-dependencies.php:128
+msgid "Manual Installation Instructions"
+msgstr ""
+
+#: tools/install-dependencies.php:130
+msgid "1. Connect to your server via SSH or FTP"
+msgstr ""
+
+#: tools/install-dependencies.php:131
+msgid "2. Navigate to: %s"
+msgstr ""
+
+#: tools/install-dependencies.php:132
+msgid "3. Run: composer install --no-dev --optimize-autoloader"
+msgstr ""
+
+#: tools/install-dependencies.php:133
+msgid "4. Alternatively, download dependencies manually from GitHub"
+msgstr ""
+
+#: tools/install-dependencies.php:134
+msgid "5. Refresh this page to check installation status"
+msgstr ""
+
+#: tools/install-dependencies.php:137
+msgid "Composer must be installed on your server"
+msgstr ""
+
+#: tools/install-dependencies.php:138
+msgid "PHP exec() function must be enabled"
+msgstr ""
+
+#: tools/install-dependencies.php:139
+msgid "Write permissions to the plugin directory"
+msgstr ""
+
+#: tools/install-dependencies.php:151
+#: tools/install-dependencies.php:151
+msgid "✅ Plugin Dependencies:"
+msgstr ""
+
+#: tools/install-dependencies.php:151
+#: tools/install-dependencies.php:151
+msgid "All required libraries are installed and ready."
+msgstr ""
+
+#: tools/install-dependencies.php:155
+#: tools/install-dependencies.php:155
+msgid "⚠️ Plugin Dependencies:"
+msgstr ""
+
+#: tools/install-dependencies.php:155
+#: tools/install-dependencies.php:155
+msgid "Required libraries are missing."
+msgstr ""
+
+#: tools/install-dependencies.php:158
+#: tools/install-dependencies.php:158
+msgid "Install Dependencies Automatically"
+msgstr ""
+
+#: tools/install-dependencies.php:160
+#: tools/install-dependencies.php:160
+msgid "Automatic installation is not available. Please install manually:"
+msgstr ""
+
+#: tools/install-dependencies.php:162
+#: tools/install-dependencies.php:162
+msgid "Connect to your server via SSH"
+msgstr ""
+
+#: tools/install-dependencies.php:163
+#: tools/install-dependencies.php:163
+msgid "Navigate to: %s"
+msgstr ""
+
+#: tools/install-dependencies.php:164
+#: tools/install-dependencies.php:164
+msgid "Run: "
+msgstr ""
+
+#: tools/install-dependencies.php:177
+msgid "Installing..."
+msgstr ""
+
+#: tools/install-dependencies.php:184
+msgid "✅ Installed Successfully"
+msgstr ""
+
+#: tools/install-dependencies.php:187
+#: tools/install-dependencies.php:194
+msgid "Install Dependencies"
+msgstr ""
+
+#: tools/install-dependencies.php:188
+msgid "Installation failed:"
+msgstr ""
+
+#: tools/install-dependencies.php:190
+msgid "Manual instructions:"
+msgstr ""
+
+#: tools/install-dependencies.php:195
+msgid "Installation request failed. Please try manual installation."
+msgstr ""
+
+#: tools/repair-database.php:16
+#: tools/repair-database.php:16
+msgid "WordPress not found. Please run this script from WordPress admin or place in plugin directory."
+msgstr ""
+
+#: tools/repair-database.php:34
+#: tools/repair-database.php:34
+msgid "AI Content Agent - Database Repair"
+msgstr ""
+
+#: tools/repair-database.php:43
+#: tools/repair-database.php:43
+msgid "Checking ideas table:"
+msgstr ""
+
+#: tools/repair-database.php:47
+#: tools/repair-database.php:47
+msgid "Creating ideas table..."
+msgstr ""
+
+#: tools/repair-database.php:58
+msgid "✅ Ideas table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:60
+#: tools/repair-database.php:60
+msgid "Ideas table exists, ensuring schema..."
+msgstr ""
+
+#: tools/repair-database.php:71
+msgid "✅ Ideas table schema verified"
+msgstr ""
+
+#: tools/repair-database.php:76
+#: tools/repair-database.php:76
+msgid "Checking activity logs table:"
+msgstr ""
+
+#: tools/repair-database.php:80
+#: tools/repair-database.php:80
+msgid "Creating activity logs table..."
+msgstr ""
+
+#: tools/repair-database.php:90
+msgid "✅ Activity logs table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:92
+msgid "✅ Activity logs table exists"
+msgstr ""
+
+#: tools/repair-database.php:107
+#: tools/repair-database.php:107
+msgid "Checking content updates table:"
+msgstr ""
+
+#: tools/repair-database.php:111
+#: tools/repair-database.php:111
+msgid "Creating content updates table..."
+msgstr ""
+
+#: tools/repair-database.php:125
+msgid "✅ Content updates table created/updated"
+msgstr ""
+
+#: tools/repair-database.php:127
+msgid "✅ Content updates table exists"
+msgstr ""

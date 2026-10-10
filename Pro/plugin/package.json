@@ -1,0 +1,38 @@
+{
+  "name": "ai-content-agent-aca",
+  "version": "1.0.1",
+  "description": "AI Content Agent (ACA) - AI-powered WordPress content creation plugin with Pro licensing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:wp": "vite build && rm -f admin/assets/*.js admin/js/index.js && sh -c 'LATEST=$(ls -1t dist/assets/index-*.js | head -n 1) && mkdir -p admin/assets admin/js && cp \"$LATEST\" admin/assets/ && cp \"$LATEST\" admin/js/index.js'",
+    "preview": "vite preview",
+    "make-assets": "node scripts/generate-wporg-assets.cjs",
+    "make-pot": "node scripts/generate-pot.cjs",
+    "make-changelog": "node /workspace/scripts/generate-changelog.cjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "pngjs": "^7.0.0",
+    "terser": "^5.43.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}
